@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { QuizContext } from '../contexts/quiz'
+import { QuizContext } from '../contexts/quiz.js'
 import Answer from './Answer'
 
 const Question = () => {

@@ -1,5 +1,5 @@
 import { createContext, useReducer, ReactNode } from 'react'
-import { normalizeQuestions, shuffleAnswers } from '../helpers'
+import { normalizeQuestions, shuffleAnswers } from '../helpers.js'
 import React from 'react'
 
 interface QuizProviderProps {

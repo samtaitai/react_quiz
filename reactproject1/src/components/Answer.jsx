@@ -18,7 +18,7 @@ const Answer = ({ answerText, onSelectAnswer, index, currentAnswer, correctAnswe
 
 Answer.propTypes = {
     answerText: PropTypes.string.isRequired,
-    onSelectAnswer: PropTypes.string.isRequired,
+    onSelectAnswer: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
     currentAnswer: PropTypes.string.isRequired,
     correctAnswer: PropTypes.string.isRequired,

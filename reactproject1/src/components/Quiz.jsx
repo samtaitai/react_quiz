@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react'
 import Question from './Question.jsx'
-import { QuizContext } from '../contexts/quiz'
+import { QuizContext } from '../contexts/quiz.js'
 
 const Quiz = () => {
     const [quizState, dispatch] = useContext(QuizContext);
@@ -11,7 +11,6 @@ const Quiz = () => {
         }
         console.log("on initialize");
         fetch(apiUrl).then(res => res.json()).then(data => {
-            console.log("data", data);
             dispatch({ type: "LOADED_QUESTIONS", payload: data.results })
         }).catch(err => {
             console.log('err', err.message);
@@ -35,7 +34,6 @@ const Quiz = () => {
                         <div>You have completed the quiz.</div>
                         <div>You have got {quizState.correctAnswersCount} of {quizState.questions.length}</div>
                     </div>
-                    <div className="next-button" onClick={() => { dispatch({type: "RESTART"}) }}>RESTART</div>
                 </div>
             )}
             {!quizState.showResults && quizState.questions.length > 0 && (
