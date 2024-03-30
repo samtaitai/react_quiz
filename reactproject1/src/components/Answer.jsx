@@ -1,4 +1,6 @@
-const Answer = ({ answerText, onSelectAnswer, index, currentAnswer, correctAnswer}) => {
+import PropTypes from 'prop-types'
+
+const Answer = ({ answerText, onSelectAnswer, index, currentAnswer, correctAnswer }) => {
     const letterMapping = ['A', 'B', 'C', 'D'];
     const isCorrectAnswer = currentAnswer && answerText == correctAnswer;
     const isWrongAnswer = currentAnswer == answerText && currentAnswer != correctAnswer;
@@ -13,5 +15,13 @@ const Answer = ({ answerText, onSelectAnswer, index, currentAnswer, correctAnswe
         </div>
     );
 }
+
+Answer.propTypes = {
+    answerText: PropTypes.string.isRequired,
+    onSelectAnswer: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
+    currentAnswer: PropTypes.string.isRequired,
+    correctAnswer: PropTypes.string.isRequired,
+};
 
 export default Answer

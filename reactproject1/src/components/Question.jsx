@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { QuizContext } from '../contexts/quiz'
 import Answer from './Answer'
 
-const Question = ({ questions }) => {
+const Question = () => {
     const [quizState, dispatch] = useContext(QuizContext);
     const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
     return (

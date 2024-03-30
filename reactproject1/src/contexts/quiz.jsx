@@ -1,5 +1,10 @@
-import { createContext, useReducer } from 'react'
+import { createContext, useReducer, ReactNode } from 'react'
 import { normalizeQuestions, shuffleAnswers } from '../helpers'
+import React from 'react'
+
+interface QuizProviderProps {
+    children: ReactNode
+}
 
 const initialState = {
     currentQuestionIndex: 0,
@@ -57,7 +62,7 @@ const reducer = (state, action) => {
 }
 
 export const QuizContext = createContext();
-export const QuizProvider = ({ children }) => {
+export const QuizProvider: React.FC<QuizProviderProps> = ({ children }) => {
     const value = useReducer(reducer, initialState);
     return <QuizContext.Provider value={value}>{children}</QuizContext.Provider>
 }
